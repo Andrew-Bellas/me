@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Email from '@material-ui/icons/Email';
-import Github from '@material-ui/icons/Github';
+import Github from '@material-ui/icons/GitHub';
 import LinkedIn from '@material-ui/icons/LinkedIn';
 
 const drawerWidth = '240px';

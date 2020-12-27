@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';;
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Timeline from '@material-ui/lab/Timeline';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
@@ -14,11 +14,11 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   timeline: {
-    margin: 'auto'
+    margin: 'auto',
   },
   paper: {
     padding: '0.5vw',
-    background: theme.palette.secondary.main
+    background: theme.palette.secondary.main,
   },
   icon: {
     width: '20vw',
@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '50px',
   },
   connector: {
-    height: '3vw'
-  }
+    height: '3vw',
+  },
 }));
 
 export default function Education() {
@@ -37,20 +37,20 @@ export default function Education() {
 
   return (
     <>
-      <Typography variant='h4'>
+      <Typography variant="h4">
         Education
       </Typography>
 
-      <Timeline align="alternate" >
+      <Timeline align="alternate">
         <TimelineItem>
           <TimelineOppositeContent>
             <Typography variant="h6" color="textPrimary">
               Expected 2021
-          </Typography>
+            </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot>
-              <Avatar src='images/roo.svg' className={classes.icon} />
+              <Avatar src="images/roo.svg" className={classes.icon} />
             </TimelineDot>
             <TimelineConnector className={classes.connector} />
           </TimelineSeparator>
@@ -58,7 +58,7 @@ export default function Education() {
             <Paper elevation={3} className={classes.paper}>
               <Typography variant="h6">
                 University of Missouri-Kansas City
-            </Typography>
+              </Typography>
               <Typography>Bachelor of Science in Computer Science</Typography>
             </Paper>
           </TimelineContent>
@@ -67,11 +67,11 @@ export default function Education() {
           <TimelineOppositeContent>
             <Typography variant="h6" color="textPrimary">
               2020
-          </Typography>
+            </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot color="primary">
-              <Avatar src='images/jccc.png' className={classes.icon} />
+              <Avatar src="images/jccc.png" className={classes.icon} />
             </TimelineDot>
             <TimelineConnector className={classes.connector} />
           </TimelineSeparator>
@@ -79,7 +79,7 @@ export default function Education() {
             <Paper elevation={3} className={classes.paper}>
               <Typography variant="h6" component="h1">
                 Johnson County Community College
-            </Typography>
+              </Typography>
               <Typography> Associate of Science, Associate of Arts </Typography>
             </Paper>
           </TimelineContent>
@@ -88,18 +88,18 @@ export default function Education() {
           <TimelineOppositeContent>
             <Typography variant="h6" color="textPrimary">
               2017
-          </Typography>
+            </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot color="primary" variant="outlined">
-              <Avatar src='images/lshs.png' className={classes.icon} />
+              <Avatar src="images/lshs.png" className={classes.icon} />
             </TimelineDot>
           </TimelineSeparator>
           <TimelineContent>
             <Paper elevation={3} className={classes.paper}>
               <Typography variant="h6" component="h1">
                 Lee's Summit High School, Summit Technology Academy
-            </Typography>
+              </Typography>
             </Paper>
           </TimelineContent>
         </TimelineItem>
@@ -107,4 +107,3 @@ export default function Education() {
     </>
   );
 }
-

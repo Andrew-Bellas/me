@@ -10,4 +10,4 @@ My personal website created using React/Next.js and hosted with Vercel.
 ## TO-DO
 - [ ] Create a projects section
 - [ ] Update the color scheme
-- [ ] Implement a dark mode
+- [X] Implement a dark mode

@@ -1,24 +1,26 @@
 import React from 'react';
-import makeStyles from '@material-ui/core/styles/makeStyles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';;
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     card: {
         width: '500px',
         maxWidth: '100vw',
-        margin: '10px'
+        margin: '10px',
+        background: theme.palette.secondary.main,
     },
     paper: {
         padding: '10px',
         margin: 'auto',
     }
-});
+}));
 
 export default function Experience() {
-    const classes = useStyles();
+    const theme = useTheme();
+    const classes = useStyles(theme);
 
     function educationCard(title, company, date, description) {
         return (

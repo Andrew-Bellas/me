@@ -16,10 +16,16 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Email from '@material-ui/icons/Email';
 import Github from '@material-ui/icons/GitHub';
 import LinkedIn from '@material-ui/icons/LinkedIn';
+import { FormControlLabel, Switch } from '@material-ui/core';
+import useDarkMode from "use-dark-mode";
 
 const drawerWidth = '240px';
 
 const useStyles = makeStyles((theme) => ({
+    paper: {
+        background: theme.palette.secondary.main,
+        width: drawerWidth
+    },
     root: {
         display: 'flex',
     },
@@ -27,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             width: drawerWidth,
             flexShrink: 0,
-            backgroundColor: 'theme.secondary',
         },
     },
     list: {
@@ -83,9 +88,10 @@ const useStyles = makeStyles((theme) => ({
 export default function DrawerAppBar(props) {
     const content = props.content
     const title = props.title
-    const classes = useStyles();
     const theme = useTheme();
+    const classes = useStyles(theme);
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const {value: isDark, toggle: toggleDarkMode} = useDarkMode()
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -135,17 +141,23 @@ export default function DrawerAppBar(props) {
                         <Typography variant="h6" noWrap>
                             {title}
                         </Typography>
+                        <FormControlLabel
+                            control={<Switch onClick={toggleDarkMode}/>}
+                            label="Dark Mode"
+                            labelPlacement="end"
+                            checked={isDark}
+                            style={{marginLeft: 'auto'}}
+                        />
                     </Toolbar>
                 </AppBar>
                 <nav className={classes.drawer}>
                     <Hidden smUp>
                         <Drawer
                             variant="temporary"
-                            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
                             open={mobileOpen}
                             onClose={handleDrawerToggle}
                             classes={{
-                                paper: classes.drawerPaper,
+                                paper: classes.paper,
                             }}
                         >
                             {drawer}
@@ -154,7 +166,7 @@ export default function DrawerAppBar(props) {
                     <Hidden xsDown>
                         <Drawer
                             classes={{
-                                paper: classes.drawerPaper,
+                                paper: classes.paper,
                             }}
                             variant="permanent"
                             open

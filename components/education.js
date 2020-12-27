@@ -1,5 +1,5 @@
 import React from 'react';
-import makeStyles from '@material-ui/core/styles/makeStyles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';;
 import Timeline from '@material-ui/lab/Timeline';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: '0.5vw',
+    background: theme.palette.secondary.main
   },
   icon: {
     width: '20vw',
@@ -31,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Education() {
-  const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(theme);
 
   return (
     <>

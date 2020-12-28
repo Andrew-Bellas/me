@@ -4,10 +4,19 @@ My personal website created using React/Next.js and hosted with Vercel.
 
 ## Development 
 
-1. Install dependencies with `npm install`.
-2. Run the application with `npm run dev`.
+### Install Dependencies
+    npm install
+
+### Run Application Locally
+    npm run dev
+
+### Check Lint
+    npm run lint /path/to/file(s)
 
 ## TO-DO
 - [ ] Create a projects section
-- [ ] Update the color scheme
+- [X] Update the color scheme
 - [X] Implement a dark mode
+
+## License 
+[MIT](https://github.com/Andrew-Bellas/me/blob/master/LICENSE)

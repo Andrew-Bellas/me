@@ -98,7 +98,7 @@ export default function Education() {
           <TimelineContent>
             <Paper elevation={3} className={classes.paper}>
               <Typography variant="h6" component="h1">
-                Lee's Summit High School, Summit Technology Academy
+                Lee&#39;s Summit High School, Summit Technology Academy
               </Typography>
             </Paper>
           </TimelineContent>

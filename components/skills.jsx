@@ -36,7 +36,7 @@ export default function Skills() {
       <Typography variant="h4">
         Skills
       </Typography>
-      <Box display="flex" flexWrap="wrap" clasName={classes.box}>
+      <Box display="flex" flexWrap="wrap" className={classes.box}>
         {skillIcon('ruby')}
         {skillIcon('rails')}
         {skillIcon('c++')}

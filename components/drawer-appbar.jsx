@@ -18,6 +18,7 @@ import Github from '@material-ui/icons/GitHub';
 import LinkedIn from '@material-ui/icons/LinkedIn';
 import { FormControlLabel, Switch } from '@material-ui/core';
 import useDarkMode from 'use-dark-mode';
+import PropTypes from 'prop-types';
 
 const drawerWidth = '240px';
 
@@ -87,7 +88,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function DrawerAppBar(props) {
   const { content } = props;
-  const { title } = props;
   const theme = useTheme();
   const classes = useStyles(theme);
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -100,7 +100,7 @@ export default function DrawerAppBar(props) {
   const drawer = (
     <div>
       <List disablePadding className={classes.list}>
-        <ListItem button component="a" href="#me">
+        <ListItem button key="me" component="a" href="#me">
           <div className={classes.profile}>
             <Avatar src="images/avatar.jpg" className={classes.avatar} />
             <Typography variant="h5" className={classes.listText}> Andrew Bellas </Typography>
@@ -109,46 +109,32 @@ export default function DrawerAppBar(props) {
         <Divider />
         {['Experience', 'Skills', 'Education'].map((text) => (
           <>
-            <ListItem button key={text} component="a" href={`#${text.toLowerCase()}`} className={classes.listText}>
+            <ListItem button key={text} id={text} component="a" href={`#${text.toLowerCase()}`} className={classes.listText}>
               <ListItemText
                 disableTypography
                 primary={(
                   <Typography variant="h6">
-                    {' '}
                     {text}
-                    {' '}
                   </Typography>
 )}
               />
             </ListItem>
           </>
         ))}
-        <ListItem>
-          {' '}
+        <ListItem key="github">
           <IconButton className={classes.iconButton} href="https://github.com/andrew-bellas">
-            {' '}
             <Github className={classes.icon} />
-            {' '}
           </IconButton>
-          {' '}
         </ListItem>
-        <ListItem>
-          {' '}
+        <ListItem key="linkedin">
           <IconButton className={classes.iconButton} href="http://www.linkedin.com/in/andrewsbellas">
-            {' '}
             <LinkedIn className={classes.icon} />
-            {' '}
           </IconButton>
-          {' '}
         </ListItem>
-        <ListItem>
-          {' '}
+        <ListItem key="email">
           <IconButton className={classes.iconButton} href="mailto:andrewsbellas@gmail.com">
-            {' '}
             <Email className={classes.icon} />
-            {' '}
           </IconButton>
-          {' '}
         </ListItem>
       </List>
     </div>
@@ -169,7 +155,7 @@ export default function DrawerAppBar(props) {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-              {title}
+              Hello, I&#39;m Andrew
             </Typography>
             <FormControlLabel
               control={<Switch onClick={toggleDarkMode} />}
@@ -213,3 +199,7 @@ export default function DrawerAppBar(props) {
     </>
   );
 }
+
+DrawerAppBar.propTypes = {
+  content: PropTypes.element.isRequired,
+};

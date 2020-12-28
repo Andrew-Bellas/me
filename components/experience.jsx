@@ -33,6 +33,7 @@ export default function Experience() {
             {company}
             {' '}
             •
+            {' '}
             {date}
           </Typography>
           <Typography variant="body2">

@@ -8,28 +8,20 @@ import Skills from '../components/skills';
 
 export default function Home() {
   const content = (
-    <div>
+    <>
       <a name="me">
-        {' '}
         <About />
-        {' '}
       </a>
       <a name="experience">
-        {' '}
         <Experience />
-        {' '}
       </a>
       <a name="skills">
-        {' '}
         <Skills />
-        {' '}
       </a>
       <a name="education">
-        {' '}
         <Education />
-        {' '}
       </a>
-    </div>
+    </>
   );
 
   return (
@@ -40,7 +32,6 @@ export default function Home() {
       </Head>
       <div>
         <DrawerAppBar
-          title="Hello, I'm Andrew"
           content={content}
         />
       </div>

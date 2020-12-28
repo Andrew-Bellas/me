@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint",
+    "lint": "./node_modules/.bin/eslint --ext .jsx --ext .js",
     "dev": "next"
   },
   "dependencies": {
@@ -12,6 +12,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "fontsource-roboto": "^3.0.3",
     "next": "^10.0.3",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "use-dark-mode": "^2.3.1"
